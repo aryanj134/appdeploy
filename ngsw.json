@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1764950342483,
+  "timestamp": 1764950656604,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -1133,7 +1133,7 @@
     "/cordova_plugins.js": "12f384c2c5b55c8eb5b0f67e21b16510088d7f2c",
     "/favicon.ico": "696dfbca3c3326f3a7832c34da7188bf98d59dbe",
     "/icons8-home.5c3af35990e7b937.svg": "08828a5223afec9acb9e79b6603dcaf5e561f1b9",
-    "/index.html": "eda5ca377c44c649be0ef3b0277f32b5537861e6",
+    "/index.html": "011e38de704d2acd100c90e7e6f48431e23a4194",
     "/main.f8c4285e21c9e164.js": "7fca06bea9b990d58dd6a2f8585789349c752069",
     "/manifest.webmanifest": "9a088b7c4339228d1082e666ce105dc889bc180c",
     "/montserrat-v14-latin-regular.016fddc825bb37e6.woff2": "7b7c670ef2f0ba7fc0ce6437e523ccbdc847fde2",
