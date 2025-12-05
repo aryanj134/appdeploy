@@ -82,10 +82,10 @@
 
       async function checkVersion() {
         try {
-          // const res = await fetch('/version.json', { cache: 'no-store' });
-          // const data = await res.json();
-          // const latestVersion = data.version;
-          const latestVersion = "51.13"; //set latest version here
+          const res = await fetch('/www/version.json', { cache: 'no-store' });
+          const data = await res.json();
+          const latestVersion = data.version;
+          // const latestVersion = "51.13"; //set latest version here
           const currentVersion = localStorage.getItem("APP_VERSION");
 
           if (currentVersion !== latestVersion) {
