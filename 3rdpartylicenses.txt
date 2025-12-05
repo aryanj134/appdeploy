@@ -19,6 +19,9 @@ MIT
 @awesome-cordova-plugins/core
 MIT
 
+@awesome-cordova-plugins/in-app-browser
+MIT
+
 @babel/runtime
 MIT
 MIT License
@@ -70,9 +73,6 @@ MIT
 MIT
 
 @ionic-native/http
-MIT
-
-@ionic-native/in-app-browser
 MIT
 
 @ionic-native/ionic-webview

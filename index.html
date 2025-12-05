@@ -75,6 +75,53 @@
   </script>
   <!-- <script src="https://ebz-static.s3.ap-south-1.amazonaws.com/easecheckout/easebuzz-checkout.js"></script> -->
   <!-- <script src="http://maps.google.com/maps/api/js?sensor=false&v=3&libraries=geometry"></script> -->
+
+   <script>
+    (function() {
+      const CHECK_INTERVAL = 1800000; // check every 30 seconds
+
+      async function checkVersion() {
+        try {
+          // const res = await fetch('/version.json', { cache: 'no-store' });
+          // const data = await res.json();
+          // const latestVersion = data.version;
+          const latestVersion = "51.11"; //set latest version here
+          const currentVersion = localStorage.getItem("APP_VERSION");
+
+          if (currentVersion !== latestVersion) {
+            console.log("New version detected → Updating app...");
+
+            // Clear relevant caches
+            localStorage.clear();
+            sessionStorage.clear();
+
+            if ('caches' in window) {
+              caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
+            }
+
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations()
+                .then(regs => regs.forEach(reg => reg.unregister()));
+            }
+
+            // Save new version
+            localStorage.setItem("APP_VERSION", latestVersion);
+
+            // Force reload bypassing CloudFront cache
+            window.location.href =
+              window.location.pathname + "?v=" + latestVersion;
+          }
+        } catch (e) {
+          console.log("Version check failed:", e);
+        }
+      }
+
+      checkVersion(); // run at startup
+      setInterval(checkVersion, CHECK_INTERVAL); // run repeatedly
+    })();
+</script>
+
+
   <link rel="manifest" href="manifest.webmanifest">
   <title></title>
   <meta name="theme-color" content="#1976d2">
@@ -88,6 +135,6 @@
   </app-root>
 
   <noscript>Please enable JavaScript to continue using this application.</noscript>
-<script src="runtime.5a3183bc04decf53.js" type="module"></script><script src="polyfills.eec193f2ea3beb4d.js" type="module"></script><script src="cordova.3c8302fba18b7d3c.js" defer></script><script src="main.8f309e490ca1af59.js" type="module"></script></body>
+<script src="runtime.5df5f30ed26cb721.js" type="module"></script><script src="polyfills.eec193f2ea3beb4d.js" type="module"></script><script src="cordova.3c8302fba18b7d3c.js" defer></script><script src="main.f8c4285e21c9e164.js" type="module"></script></body>
 
 </html>
